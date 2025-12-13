@@ -1,0 +1,92 @@
+.why {
+    display: flex;
+    flex-direction: column;
+    padding: 0% 10%;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    &-title {
+        font-family: "Bank";
+        font-size: 24px;
+        text-align: center;
+    }
+
+    &-cards {
+        display: flex;
+        justify-content: space-between;
+
+        &-one {
+            background-color: var(--color-purp);
+            padding: 2%;
+            font-family: "Manrope";
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            width: 23%;
+            color: white;
+
+            &-t {
+                font-size: 20px;
+
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1290px) {
+    .why {
+        padding: 0% 5%;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .why {
+        padding: 0% 5%;
+        gap: 10px;
+
+        &-cards {
+            flex-wrap: wrap;
+            gap: 30px;
+
+            &-one {
+                gap: 20px;
+                width: 47%;
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .why {
+        display: flex;
+        flex-direction: column;
+        padding: 0% 5%;
+        gap: 10px;
+        margin-bottom: 40px;
+
+        &-title {
+            font-size: 20px;
+        }
+
+        &-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &-one {
+
+                flex-direction: column;
+                width: 100%;
+
+                &-t {
+                    font-size: 16px;
+
+                }
+            }
+
+        }
+    }
+}

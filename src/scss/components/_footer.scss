@@ -1,0 +1,245 @@
+footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 30px 10%;
+    font-family: "Manrope";
+    font-weight: 500;
+    background-color: var(--color-purp);
+    color: white;
+    gap: 50px;
+    align-items: center;
+
+    .footer-stros {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-logo {
+            cursor: pointer;
+
+        }
+    }
+
+    .footer-strt {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-t {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        &-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+        }
+    }
+
+
+    #navigations {
+        display: flex;
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+            color: var(--grey) !important
+        }
+    }
+
+
+    .footer-call {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        font-weight: 400;
+
+        &-str {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+            &-number {
+                font-size: 14px;
+            }
+        }
+
+        &-two {
+            text-decoration: underline;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+
+            &:hover {
+                color: var(--grey) !important
+            }
+        }
+    }
+
+    .footer-in {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-tex {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+}
+
+
+
+@media (max-width: 1290px) {
+    footer {
+        width: 100%;
+        padding: 30px 5%;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    footer {
+        width: 100%;
+        padding: 20px 5%;
+        gap: 50px;
+
+        .footer-stros {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-logo {
+                cursor: pointer;
+
+            }
+        }
+
+        .footer-strt {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-t {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            &-logos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 35px;
+            }
+        }
+
+
+        #navigations {
+            display: none;
+
+        }
+
+        .footer-call {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            font-weight: 400;
+
+            &-str {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+
+                &-number {
+                    font-size: 14px;
+                }
+            }
+
+            &-two {
+                text-decoration: underline;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+
+        .footer-in {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &-tex {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 567px) {
+    footer {
+        width: 100%;
+        padding: 20px 5%;
+        gap: 50px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .footer-stros {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        .footer-strt {
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            &-t {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            &-logos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 35px;
+            }
+        }
+
+
+
+        .footer-call {
+            gap: 5px;
+            flex-direction: column;
+
+            &-str {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+
+        .footer-in {
+            gap: 20px;
+            text-align: center;
+        }
+    }
+}

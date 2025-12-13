@@ -1,0 +1,38 @@
+.ban {
+    width: 100%;
+    margin: 40px 0px;
+    display: flex;
+    justify-content: center;
+    &-er {
+        background-color: var(--color-purp);
+        height: 60px;
+        padding: 10px;
+        width: 468px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+    }
+    &-track {
+        display: flex;
+        width: max-content;
+        animation: slide 20s linear infinite;
+    }
+    &-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 20px;
+    }
+}
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%); // едет половина трека
+    }
+}
+a{
+    text-decoration: none;
+}

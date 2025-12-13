@@ -1,0 +1,124 @@
+.contactes {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10%;
+    gap: 40px;
+     
+
+    &-nav {
+        color: black;
+        font-size: 14px;
+        font-family: "Manrope";
+        font-weight: 500;
+        word-wrap: break-word
+    }
+
+    &-title {
+        align-self: stretch;
+        text-align: center;
+        color: black;
+        font-size: 24px;
+        font-family: "Bank";
+        font-weight: 500;
+
+    }
+
+    &-ban {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-con {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--color-purp);
+            height: 90px;
+            width: 728px;
+            align-items: center;
+            padding: 20px;
+            
+            will-change: transform;
+
+            &-img {
+                background-image: url(../images/boss.webp);
+                height: 70px;
+                width: 70px;
+            }
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-btn {
+
+                background-color: white;
+                color: var(--color-purp);
+                width: max-content;
+                padding: 10px;
+                font-family: "Manrope";
+                font-weight: 400;
+                cursor: pointer;
+                padding: 10px;
+                height: min-content;
+                will-change: transform, box-shadow;
+
+            }
+        }
+
+    }
+}
+@media (max-width: 1280px) {
+  .contactes-ban-con {
+    width: 100%;
+    max-width: 680px;
+  }
+}
+@media (max-width: 992px) {
+  .contactes-ban-con {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
+    padding: 16px;
+
+
+    &-text {
+
+      align-items: center;
+      text-align: center;
+    }
+
+    &-btn {
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .contactes-ban-con {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 16px;
+    overflow: hidden;
+  }
+
+
+
+  .contactes-ban-con-text div {
+    font-size: 14px;
+  }
+
+  .contactes-ban-con-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+a{
+    color: black;
+     transition: .3s;
+    
+    &:hover{
+        color: var(--color-purp);
+    }
+}

@@ -1,0 +1,33 @@
+.ci {
+    display: flex;
+    flex-direction: column;
+
+gap: 10px;
+    &-stro {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        height: min-content;
+        flex-wrap: wrap;
+
+        &-text {
+            color: black;
+            font-size: 20px;
+            font-family: "Manrope";
+            font-weight: 500;
+            
+
+        }
+
+        &-btn {
+            background-color: var(--color-purp);
+            color: white;
+            width: max-content;
+            padding: 10px;
+            font-family: "Manrope";
+            font-weight: 400;
+            cursor: pointer;
+            border: none;
+        }
+    }
+}

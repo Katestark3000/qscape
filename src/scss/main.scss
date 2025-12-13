@@ -1,0 +1,25 @@
+// ==== 1. Utils ====
+@use 'utils/variables';
+
+// ==== 2. Base styles ====
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/layout';
+
+// ==== 3. Layou ====
+@use 'layout/container';
+
+// ==== 4. Components ====
+@use 'components/header';
+@use 'components/nav-card';
+@use 'components/hero';
+@use 'components/btn';
+@use 'components/path';
+@use 'components/about';
+@use 'components/why';
+@use 'components/project';
+@use 'components/footer';
+@use 'components/banform';
+@use 'components/modal-form';
+@use 'components/cont-contact';
+@use 'components/c-icons';

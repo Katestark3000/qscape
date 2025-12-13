@@ -1,0 +1,12 @@
+.bnt-t {
+    background-color: white;
+    color: var(--color-purp);
+    width: max-content;
+    padding: 10px;
+    font-family: "Manrope";
+    font-weight: 400;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--grey);
+    }
+}

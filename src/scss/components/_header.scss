@@ -1,0 +1,172 @@
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 10%;
+  font-family: "Manrope";
+  font-weight: 500;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .navigation {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    transition: .3s;
+
+    &:hover {
+      color: var(--color-purp);
+    }
+  }
+
+  /* ——— ТЕЛЕФОНЫ ——— */
+  a:hover {
+    color: var(--color-purp);
+  }
+
+  .block-call {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    font-weight: 400;
+
+    &-str {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+
+      &-number {
+        font-size: 16px;
+      }
+    }
+
+    &-two {
+      text-decoration: underline;
+      color: var(--color-purp);
+      font-size: 16px;
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  z-index: 100;
+  background: var(--color-purp);
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  transition: top .3s ease-in-out;
+
+  &.active {
+    top: 0;
+  }
+
+  &__link {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.navigatio {
+  display: flex;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    color: var(--color-purp);
+  }
+}
+
+@media (max-width: 1280px) {
+  header {
+    padding: 20px 5%;
+  }
+}
+
+
+
+
+@media (max-width: 992px) {
+  header {
+    .navigation {
+      display: none; // скрываем меню
+    }
+
+    .block-call {
+      display: none; // убираем звонок
+    }
+
+    .menu {
+      display: flex; // показываем бургер
+    }
+  }
+
+  .mobile-menu {
+    font-size: 20px;
+    color: white !important;
+    
+    padding: 40px 20px;
+  }
+ 
+}
+
+@media (max-width: 576px) {
+  header {
+    .navigation {
+      display: none; // скрываем меню
+    }
+
+    .block-call {
+      display: none; // убираем звонок
+    }
+
+    .menu {
+      display: flex; // показываем бургер
+    }
+  }
+
+  .mobile-menu {
+    font-size: 20px;
+    color: white !important;
+
+    height: 300px;
+    padding: 20px 20px;
+  }
+}

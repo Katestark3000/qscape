@@ -1,0 +1,68 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0px;
+    gap: 100px;
+
+    &-r {
+        display: flex;
+        flex-direction: column;
+        font-family: "Manrope";
+        width: 40%;
+    }
+
+    &-title {
+
+        font-size: 24px;
+        font-weight: 500;
+
+    }
+
+    &-text {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    &-pick {
+        height: 25vh;
+        width: 25vh;
+        background-image: url(../images/about.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .about {
+        margin: 40px 0px;
+        gap: 50px;
+        &-title {
+            font-size: 20px;
+        }
+        &-text {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .about {
+        margin: 40px 20px;
+        gap: 30px;
+        flex-direction: column;
+        &-r {
+            width: 100%;
+        }
+        &-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        &-text {
+            font-size: 16px;
+        }
+    }
+}

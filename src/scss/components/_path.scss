@@ -1,0 +1,100 @@
+.paths {
+    display: flex;
+    width: 100%;
+
+    &-t {
+        position: relative;
+        width: 25%;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+        &.ai {
+            background-image: url(../images/path1.webp);
+        }
+
+        &.b {
+            background-image: url(../images/path2.webp);
+        }
+
+        &.c {
+            background-image: url(../images/path3.webp);
+        }
+
+        &.d {
+            background-image: url(../images/path4.webp);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        &-d {
+            position: relative; // над overlay
+            color: white;
+            font-family: "Bank";
+            font-size: 24px;
+            padding: 5px 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            background-color: var(--color-proz);
+
+            // эффект при hover блока
+            .paths-t:hover & {
+                transform: translateY(-5px);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1290px) {
+    .paths-t {
+        height: 25vh;
+        &-d {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .paths {
+        flex-wrap: wrap;
+        &-t {
+            width: 50%;
+            height: 25vh;
+            &-d {
+                font-size: 20px;
+                
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .paths {
+        flex-wrap: wrap;
+        &-t {
+            width: 100%;
+            height: 25vh;
+            &-d {
+                font-size: 20px;
+            }
+        }
+    }
+}
