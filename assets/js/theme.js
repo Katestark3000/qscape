@@ -1,76 +1,86 @@
-const html = document.documentElement;
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.menu');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-document.getElementById("theme-toggle").addEventListener("click", () => {
-    html.classList.toggle("dark");
-    localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
-});
+  if (!burger || !mobileMenu) return;
 
-// восстановление темы
-if (localStorage.getItem("theme") === "dark") {
-    html.classList.add("dark");
-}
-
-
-const burger = document.querySelector('.burger');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-
-burger.addEventListener('click', (e) => {
-    e.stopPropagation(); 
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation(); // ВАЖНО
     mobileMenu.classList.toggle('active');
-});
+    document.documentElement.classList.toggle(
+      'no-scroll',
+      mobileMenu.classList.contains('active')
+    );
+  });
 
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
-});
+  mobileMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
 
-document.addEventListener('click', (e) => {
-    if (
-        mobileMenu.classList.contains('active') &&
-        !mobileMenu.contains(e.target) &&
-        !burger.contains(e.target)
-    ) {
-        mobileMenu.classList.remove('active');
+  document.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.remove('active');
+      document.documentElement.classList.remove('no-scroll');
     }
+  });
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const openBtn = document.querySelector(".catalog-open-btn");
-    const modal = document.querySelector(".cataloge-modal");
-    const overlay = document.querySelector(".cataloge-modal-overlay");
-    const closeBtn = document.querySelector(".cataloge-close");
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modalForm');
+  if (!modal) return;
 
-    function openModal() {
-        modal.style.display = "flex";
-        overlay.style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
+  const openButtons = document.querySelectorAll('[data-modal-open]');
+  const closeBtn = modal.querySelector('.modal-close');
+  const overlay = modal.querySelector('.modal-overlay');
+  const modalForm = modal.querySelector('.modal-form');
 
-    function closeModal() {
-        modal.style.display = "none";
-        overlay.style.display = "none";
-        document.body.style.overflow = "";
-    }
-
-    openBtn?.addEventListener("click", openModal);
-    closeBtn?.addEventListener("click", closeModal);
-    overlay?.addEventListener("click", closeModal);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".gallery-track");
-    const btnLeft = document.querySelector(".gallery-btn.left");
-    const btnRight = document.querySelector(".gallery-btn.right");
-
-    btnRight.addEventListener("click", () => {
-        track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+  // открытие модалки
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      modal.classList.add('active');
     });
+  });
 
-    btnLeft.addEventListener("click", () => {
-        track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
-    });
+  // закрытие модалки
+  closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+  overlay.addEventListener('click', () => modal.classList.remove('active'));
+
+  // имитация отправки формы
+  modalForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(modalForm).entries());
+    
+    modal.classList.remove('active');
+    modalForm.reset();
+  });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.querySelector('.contactes-ban-con');
+  const btn = document.querySelector('.contactes-ban-con-btn');
+
+  if (!banner || !btn) return;
+
+  /* ——— Мягкое подпрыгивание баннера ——— */
+  let direction = 1;
+
+  setInterval(() => {
+    banner.style.transform = `translateY(${direction * -3}px)`;
+    direction *= -1;
+  }, 2000);
+
+  /* ——— Пульсация кнопки ——— */
+  setInterval(() => {
+    btn.style.transform = 'scale(1.05)';
+    btn.style.boxShadow = '0 0 20px rgba(255,255,255,0.6)';
+
+    setTimeout(() => {
+      btn.style.transform = 'scale(1)';
+      btn.style.boxShadow = 'none';
+    }, 400);
+  }, 3000);
+});
